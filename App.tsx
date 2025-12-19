@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { generateWorkouts } from './services/geminiService';
-import { FilterState, Workout, UserProfile, CompletedWorkout } from './types';
-import { authService, dbService } from './services/mockDatabase';
-import { FilterSheet } from './components/FilterSheet';
-import { WorkoutCard } from './components/WorkoutCard';
-import { ActiveWorkoutOverlay } from './components/ActiveWorkoutOverlay';
-import { AuthScreen } from './components/AuthScreen';
-import { ProfileScreen } from './components/ProfileScreen';
-import { Button } from './components/Button';
+import { generateWorkouts } from './services/geminiService.ts';
+import { FilterState, Workout, UserProfile, CompletedWorkout } from './types.ts';
+import { authService, dbService } from './services/mockDatabase.ts';
+import { FilterSheet } from './components/FilterSheet.tsx';
+import { WorkoutCard } from './components/WorkoutCard.tsx';
+import { ActiveWorkoutOverlay } from './components/ActiveWorkoutOverlay.tsx';
+import { AuthScreen } from './components/AuthScreen.tsx';
+import { ProfileScreen } from './components/ProfileScreen.tsx';
+import { Button } from './components/Button.tsx';
 import { Dumbbell, SlidersHorizontal, Flame, Bookmark, ArrowLeft, ChevronLeft, ChevronRight, Sparkles, User as UserIcon } from 'lucide-react';
 
 const ITEMS_PER_PAGE = 5;

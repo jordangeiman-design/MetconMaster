@@ -34,23 +34,12 @@
         background-color: #09090b;
         color: #e4e4e7;
         -webkit-tap-highlight-color: transparent;
-        overscroll-behavior-y: contain; /* Prevents pull-to-refresh feel */
+        overscroll-behavior-y: contain;
       }
-      /* Custom scrollbar */
-      ::-webkit-scrollbar {
-        width: 6px;
-      }
-      ::-webkit-scrollbar-track {
-        background: #18181b; 
-      }
-      ::-webkit-scrollbar-thumb {
-        background: #3f3f46; 
-        border-radius: 3px;
-      }
-      /* Safe areas for notched phones */
-      .safe-area-bottom {
-        padding-bottom: env(safe-area-inset-bottom);
-      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #18181b; }
+      ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 3px; }
+      .safe-area-bottom { padding-bottom: env(safe-area-inset-bottom); }
     </style>
   <script type="importmap">
 {
@@ -67,13 +56,15 @@
 </head>
   <body>
     <div id="root"></div>
+    <!-- THIS IS THE CRITICAL LINE THAT WAS MISSING -->
+    <script type="module" src="./index.tsx"></script>
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('./sw.js').then(reg => {
-            console.log('SW registered:', reg);
+            console.log('SW registered');
           }).catch(err => {
-            console.log('SW registration failed:', err);
+            console.log('SW failed', err);
           });
         });
       }
