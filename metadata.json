@@ -1,0 +1,5 @@
+{
+  "name": "MetconMaster AI",
+  "description": "An intelligent workout generator that finds or creates the perfect Metabolic Conditioning workout based on your equipment, time, and goals.",
+  "requestFramePermissions": []
+}
